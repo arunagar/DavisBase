@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 import davisbase.FileController;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,10 +30,10 @@ public class DataTypeReadConverter implements DataTypeConverter{
     @Override
     public void visit(DB_TINYINT data) {
         try {
-            byte newIdata = currentFile.readByte();
-            data.s
-        } catch () {
-
+            byte newData = currentFile.readByte();
+            data.setTinyInt(newData);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -87,14 +89,41 @@ public class DataTypeReadConverter implements DataTypeConverter{
 
     @Override
     public void visit(DB_BIGINT data) {
+        long newData;
+        try {
+            newData = currentFile.readLong();
+            data.setBigInt(newData);
+        } catch (IOException ex) {
+            Logger.getLogger(DataTypeReadConverter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void visit(DB_SMALLINT data) {
+        try {
+            short newData = currentFile.readShort();
+            data.setShortData(newData);
+        } catch (IOException ex) {
+            Logger.getLogger(DataTypeReadConverter.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @Override
-    public void visit(DB_VARCHAR data) {
+    public void visit(DB_TEXT data) {
+        long ln = data.getTiny();
+        byte[] b = new byte[(int)ln];
+        char[] c = new char[(int)ln];
+        try {
+            currentFile.read(b);
+            for(int i=0; i < ln; i++){
+                c[i] = (char) b[i];
+            }
+            String textData = String.valueOf(c);
+            data.setData(textData);
+        } catch (IOException ex) {
+            Logger.getLogger(DataTypeReadConverter.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override

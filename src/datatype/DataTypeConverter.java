@@ -18,7 +18,7 @@ public interface DataTypeConverter {
 	public void visit(DB_INT data);
 	public void visit(DB_BIGINT data);
 	public void visit(DB_SMALLINT data);
-	public void visit(DB_VARCHAR data);
+	public void visit(DB_TEXT data);
 	public void visit(DB_Record data);	
 	//public void visit(IndexTableRecord data);
     

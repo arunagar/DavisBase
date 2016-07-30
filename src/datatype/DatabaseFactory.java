@@ -50,7 +50,7 @@ public class DatabaseFactory {
                 dataType = new DB_TINYINT();
                 break;
             case "varchar":
-                dataType = new DB_VARCHAR();
+                dataType = new DB_TEXT();
                 break;
             case "record":
                 dataType = new DB_Record();
@@ -66,8 +66,8 @@ public class DatabaseFactory {
         if(name.startsWith("varchar")){
             String val = ParsingUtility.getParanthesisValue(name);
             val = val.trim();
-            dataType = new DB_VARCHAR();
-            DB_VARCHAR varchar = (DB_VARCHAR)dataType;
+            dataType = new DB_TEXT();
+            DB_TEXT varchar = (DB_TEXT)dataType;
             varchar.setMaxLen(Integer.parseInt(val));
         }
         else{

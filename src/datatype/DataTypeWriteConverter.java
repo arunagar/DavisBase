@@ -52,7 +52,7 @@ public class DataTypeWriteConverter implements DataTypeConverter{
     }
 
     @Override
-    public void visit(DB_VARCHAR data) {
+    public void visit(DB_TEXT data) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

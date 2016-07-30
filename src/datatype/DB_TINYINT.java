@@ -10,15 +10,30 @@ package datatype;
  * @author Swetha
  */
 public class DB_TINYINT implements DataType{
+    
+    private byte byteData;
+
+    public short getTinyInt() {
+        return byteData;
+    }
+
+    public void setTinyInt(byte tinyInt) {
+        this.byteData = tinyInt;
+    }
 
     @Override
     public void accept(DataTypeConverter v) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        v.visit(this);
     }
 
     @Override
     public void setData(String sdata) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        byteData = Byte.parseByte(sdata);
+    }
+    
+    @Override
+    public String toString(){
+        return Byte.toString(byteData);
     }
     
 }
