@@ -11,10 +11,14 @@ package davisbase;
  */
 public class ColumnStructure {
     public String tableName = "";
-    public String columnName;
-    public String columnType;
-    public String isNullable;
-    public String isPrimaryKey;
+    public String columnName = "";
+    public String columnType = "";
+    public String isNullable = "";
+    public String isPrimaryKey = "";
     public int position;
     
+    public ColumnStructure(){
+        isNullable = "yes";
+        isPrimaryKey = "";
+    }
 }

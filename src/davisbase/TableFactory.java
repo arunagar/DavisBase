@@ -15,9 +15,9 @@ public class TableFactory {
     public String[] columnAttributeType;
     
     private TableFactory(){
-        String attributes = "text,long";
+        String attributes = "text,bigint";
         tableAttributeType = attributes.split(",");
-        attributes = "text,int,text,text,text";
+        attributes = "text,text,int,text,text,text";
         columnAttributeType = attributes.split(",");
     }
     
