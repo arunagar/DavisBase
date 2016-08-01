@@ -18,7 +18,7 @@ public class FileController {
 
     private static FileController fileControl = null;
     Map<String, RandomAccessFile> fileMap;
-    private String rootPath = "./data/";
+    private String rootPath = ".\\data\\";
 
     private FileController() {
         fileMap = new TreeMap<>();

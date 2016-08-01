@@ -34,7 +34,8 @@ public class Table {
             }
         }
         String fileName = tabName+".tbl";
-        TableFileReader.insertIntoValues(fileName, columTypes, values);
+        BTree.insertRow(tabStruct, columTypes, values);
+        //TableFileReader.insertIntoValues(fileName, columTypes, values);
         tabStruct.addRow();
     }
 
