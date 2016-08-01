@@ -155,4 +155,12 @@ public class DataTypeWriteConverter implements DataTypeConverter {
             e.printStackTrace();
         }
     }
+
+    public void writeShort(short size) {
+        try {
+            currentFile.writeShort(size);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }
