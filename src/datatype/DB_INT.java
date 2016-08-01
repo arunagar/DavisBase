@@ -35,5 +35,14 @@ public class DB_INT implements DataType{
     public String toString(){
         return Integer.toString(intValue);
     }
-    
+
+    @Override
+    public int size() {
+        return 4;
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return 0x06;
+    }
 }

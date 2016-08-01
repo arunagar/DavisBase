@@ -56,5 +56,14 @@ public class DB_TEXT implements DataType{
     public String toString(){
         return textData;
     }
-    
+
+    @Override
+    public int size() {
+        return (int)getTiny();
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return (byte) (12 + tiny.size());
+    }
 }

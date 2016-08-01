@@ -35,5 +35,13 @@ public class DB_SMALLINT implements DataType{
     public String toString(){
         return Short.toString(shortData);
     }
-    
+
+    @Override
+    public int size() {
+        return 2;
+    }
+    @Override
+    public byte getSerialCode() {
+        return 0x05;
+    }
 }

@@ -13,5 +13,6 @@ public interface DataType {
     public void accept(DataTypeConverter v);
 	 public void setData(String sdata);
 	 public String toString();
-    
+	public int size();
+	public byte getSerialCode();
 }

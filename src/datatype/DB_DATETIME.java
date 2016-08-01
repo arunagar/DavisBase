@@ -51,5 +51,14 @@ public class DB_DATETIME implements DataType{
         String dateTimeStr = dateTimeFormat.format(d);
         return dateTimeStr;
     }
-    
+
+    @Override
+    public int size() {
+        return 8;
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return 0x0A;
+    }
 }

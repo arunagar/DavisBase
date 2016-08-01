@@ -22,6 +22,14 @@ public class DB_Record implements DataType{
     public DB_Record(){
         vecDataTypes = new Vector<>();
     }
+
+    public void addSerialCodes(DataTypeWriteConverter v) {
+        for(int i=0;i<vecDataTypes.size();i++){
+            DataType elements = vecDataTypes.get(i);
+            v.writeByte(elements.getSerialCode());
+        }
+    }
+
     @Override
     public void accept(DataTypeConverter v) {
         for(int i=0;i<vecDataTypes.size();i++){
@@ -47,5 +55,13 @@ public class DB_Record implements DataType{
         }
         return res;
     }
-    
+
+    @Override public int size() {
+        return 0;
+    }
+
+    @Override public byte getSerialCode() {
+        return 0;
+    }
+
 }

@@ -35,5 +35,13 @@ public class DB_REAL implements DataType{
     public String toString(){
         return Float.toString(floatValue);
     }
-    
+
+    @Override
+    public int size() {
+        return 4;
+    }
+    @Override
+    public byte getSerialCode() {
+        return 0x08;
+    }
 }

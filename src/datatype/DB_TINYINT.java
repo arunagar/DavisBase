@@ -35,5 +35,14 @@ public class DB_TINYINT implements DataType{
     public String toString(){
         return Byte.toString(byteData);
     }
-    
+
+    @Override
+    public int size() {
+        return 1;
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return 0x04;
+    }
 }

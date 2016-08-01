@@ -106,6 +106,7 @@ public class DatabaseFactory {
         return rcd;
     }
 
+
     public DB_Record createSysColumnRecordWithValue(String values[]) {
         String[] dataTypes = TableFactory.getSingle().columnAttributeType;
         DB_Record rcd = (DB_Record) createRecordWithValue(dataTypes, values);

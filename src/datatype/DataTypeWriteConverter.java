@@ -7,10 +7,10 @@ package datatype;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
-
-import davisbase.FileController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import davisbase.FileController;
 
 /**
  *
@@ -148,4 +148,11 @@ public class DataTypeWriteConverter implements DataTypeConverter {
         }
     }
 
+    public void writeByte(byte value) {
+        try {
+            currentFile.writeByte(value);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

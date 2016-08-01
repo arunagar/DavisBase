@@ -37,4 +37,14 @@ public class DB_BIGINT implements DataType{
         return Long.toString(bigInt);
     }
 
+    @Override
+    public int size() {
+        return 4;
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return bigInt == 0L ? (byte) 0x03 : 0x07;
+    }
+
 }

@@ -47,5 +47,14 @@ public class DB_DATE implements DataType{
         String dateStr = dateFormat.format(d);
         return dateStr;
     }
-    
+
+    @Override
+    public int size() {
+        return 8;
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return 0x0B;
+    }
 }

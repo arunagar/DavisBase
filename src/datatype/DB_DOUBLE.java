@@ -35,5 +35,14 @@ public class DB_DOUBLE implements DataType{
     public String toString(){
         return Double.toString(doubleValue);
     }
-    
+
+    @Override
+    public int size() {
+        return 8;
+    }
+
+    @Override
+    public byte getSerialCode() {
+        return 0x09;
+    }
 }
